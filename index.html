@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Greeting Screen -->
+  <div class="screen active" id="greetingScreen">
+      <h1>🌸 Welcome to Our Wedding Invitation! 🌸</h1>
+      <button class="button" onclick="showScreen('nameInputScreen')">Join the Celebration!</button>
+  </div>
+
+  <!-- Name Input Screen -->
+  <div class="screen" id="nameInputScreen">
+      <h1>Please enter your name:</h1>
+      <input type="text" id="userName" placeholder="Your Name">
+      <button class="button" onclick="showScreen('weddingCard')">View Invitation</button>
+  </div>
+
+  <!-- Wedding Card Screen -->
+  <div class="screen" id="weddingCard">
+      <div class="emoji">👰 🤵</div>
+      <h1>Wedding Invitation</h1>
+      <div class="name" id="guestName"></div>
+      <div class="couple-name">PINAL & NEHA</div>
+      <p class="invitation-text">"We, together with our families will be looking forward to having you on our wedding day. We request you to join us with your friends and family!</p>
+      <p class="location">Venue: Petladwada ni vadi, Dakor </p>
+      <p class="date">Date: 14th FEBRUARY 2025</p>
+      <button class="button" onclick="showScreen('thankYouScreen')">Yes, I'll be there!</button>
+  </div>
+
+  <!-- Thank You Screen -->
+  <div class="screen" id="thankYouScreen">
+      <h1 class="thank-you-message">Thank you for accepting our invitation!</h1>
+      <p>We can't wait to share this special day with you.</p>
+      <button class="button" onclick="showScreen('greetingScreen')">Close</button>
+  </div>
+
+  <!-- Floating Flowers -->
+  <script>
+      // Function to create floating flowers
+      function createFlowers() {
+          const numFlowers = 20;
+          for (let i = 0; i < numFlowers; i++) {
+              const flower = document.createElement('div');
+              flower.innerText = '🌸';
+              flower.classList.add('flower');
+              flower.style.left = `${Math.random() * 100}vw`;
+              flower.style.animationDuration = `${Math.random() * 10 + 5}s`;
+              flower.style.opacity = Math.random();
+              document.body.appendChild(flower);
+          }
+      }
+
+      createFlowers();
+
+      // Function to show specific screens
+      function showScreen(screenId) {
+          document.querySelectorAll('.screen').forEach(screen => {
+              screen.classList.remove('active');
+          });
+          document.getElementById(screenId).classList.add('active');
+
+          // Set the guest name on the card
+          if (screenId === 'weddingCard') {
+              const name = document.getElementById('userName').value;
+              document.getElementById('guestName').innerText = `Dear ${name},`;
+          }
+      }
+  </script>
+
+</body>
+</html>

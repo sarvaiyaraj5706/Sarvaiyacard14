@@ -1,0 +1,115 @@
+body {
+  font-family: 'Georgia', serif;
+  background-color: #f8f4f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Flower animation */
+.flower {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #ff69b4;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+      transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+      transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+.screen {
+  display: none;
+  text-align: center;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 500px;
+}
+
+.active {
+  display: block;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #8B0000;
+}
+
+.button {
+  background: linear-gradient(135deg, #b8336a, #7f1d5d);
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+input {
+  font-size: 1.2rem;
+  padding: 10px;
+  margin-top: 20px;
+  border: 2px solid #b8336a;
+  border-radius: 10px;
+  width: 80%;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #5a0214;
+  margin: 20px 0;
+}
+
+.couple-name {
+  font-size: 2.5rem;
+  color: #8B0000;
+  margin: 10px 0;
+}
+
+.emoji {
+  font-size: 3rem;
+}
+
+.thank-you-message {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.invitation-text {
+  font-size: 1.3rem;
+  margin: 20px 0;
+  color: #5a0214;
+}
+.location{
+  font-size: 1.8em;
+}
+
+.date{
+  font-size: 1.3em;
+}
